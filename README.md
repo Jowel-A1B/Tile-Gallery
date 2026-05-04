@@ -124,3 +124,4 @@ src/
     ├── auth.js              # BetterAuth server config
     └── auth-client.js       # BetterAuth client config
 ```
+ 
