@@ -66,6 +66,7 @@ export default async function TileDetailPage({ params }) {
               className="w-full h-full object-cover"
             />
           </div>
+          {/* Thumbnail strip */}
           <div className="grid grid-cols-4 gap-2 mt-3">
             {[1, 2, 3, 4].map((i) => (
               <div

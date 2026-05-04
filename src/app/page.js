@@ -6,9 +6,7 @@ async function getFeaturedTiles() {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/api/tiles?_limit=4`,
-      {
-        cache: "no-store",
-      },
+      { cache: "no-store" },
     );
     if (!res.ok) return [];
     return res.json();
@@ -33,6 +31,7 @@ export default async function HomePage() {
     <div>
       {/* Hero Banner */}
       <section className="hero-gradient relative overflow-hidden min-h-[90vh] flex items-center">
+        {/* Decorative tile pattern overlay */}
         <div className="absolute inset-0 opacity-10">
           <div className="grid grid-cols-8 h-full">
             {Array.from({ length: 64 }).map((_, i) => (
@@ -76,6 +75,7 @@ export default async function HomePage() {
           </div>
         </div>
 
+        {/* Decorative right side tiles */}
         <div className="absolute right-0 bottom-0 w-1/3 h-full opacity-20 hidden lg:block">
           <div className="grid grid-cols-3 h-full gap-1 p-4">
             {Array.from({ length: 9 }).map((_, i) => (
@@ -124,6 +124,9 @@ export default async function HomePage() {
         ) : (
           <div className="text-center py-16 text-slate/50">
             <p className="font-display text-2xl mb-2">Tiles coming soon...</p>
+            <p className="text-sm">
+              Make sure your JSON server is running on port 5000.
+            </p>
           </div>
         )}
 
