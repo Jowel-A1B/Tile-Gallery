@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import 'animate.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-dm-sans);
+  background-color: #FAF7F2;
+  color: #2C3E50;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-playfair);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EBE3;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4A882;
+  border-radius: 3px;
+}
+
+/* Tile card hover effect */
+.tile-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(44, 62, 80, 0.15);
+}
+
+/* Marquee custom style */
+.marquee-text {
+  font-family: var(--font-playfair);
+  font-style: italic;
+  color: #C4A882;
+  letter-spacing: 0.05em;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #2C3E50 0%, #4A5240 50%, #A0522D 100%);
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(196, 168, 130, 0.3);
+}
+
+/* Loading spinner */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #E5DDD3;
+  border-top-color: #C4A882;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Tag pills */
+.tag-pill {
+  background: rgba(196, 168, 130, 0.2);
+  color: #A0522D;
+  border: 1px solid rgba(196, 168, 130, 0.4);
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
