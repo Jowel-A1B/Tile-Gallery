@@ -143,13 +143,14 @@ const tiles = [
 ];
 
 export default async function TileDetailPage({ params }) {
+  const { id } = await params;
   const session = await auth.api.getSession({ headers: await headers() });
 
   if (!session) {
     redirect("/login");
   }
 
-  const tile = tiles.find((t) => t.id === params.id);
+  const tile = tiles.find((t) => t.id === id);
 
   if (!tile) {
     return (
